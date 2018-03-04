@@ -323,6 +323,7 @@ int main() {
                 }
               }
 
+
           	vector<double> ptsx;
           	vector<double> ptsy;
 
@@ -415,12 +416,7 @@ int main() {
 
             // Fill up the rest of Path planner after filling it with previous points, here we will always output 50 points.
             for( int i = 1; i < 50 - prev_size; i++ ) {
-              ref_vel += speed_diff;
-              if ( ref_vel > MAX_SPEED ) {
-                ref_vel = MAX_SPEED;
-              } else if ( ref_vel < MAX_ACC ) {
-                ref_vel = MAX_ACC;
-              }
+
 
               double N = (target_dist/(0.02*ref_vel/2.24));
               double x_point = x_add_on+(target_x)/N;
